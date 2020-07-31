@@ -24,6 +24,9 @@ let currentDate = now.getDate();
 let currentYear = now.getFullYear();
 let currentHour = now.getHours();
 let currentMinute = now.getMinutes();
+    if (currentMinute < 10) {
+        currentMinute = `0${currentMinute}`;
+    }
 
 h1.innerHTML = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear}, ${currentHour}:${currentMinute}`;
 
@@ -71,6 +74,8 @@ function displayTemperature(response) {
     humidityElement.innerHTML = response.data.main.humidity;
     let windElement = document.querySelector("#wind-speed");
     windElement.innerHTML = Math.round(response.data.wind.speed);
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     console.log(response.data);
   }
 

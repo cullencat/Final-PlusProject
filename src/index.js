@@ -70,7 +70,7 @@ function displayTemperature(response) {
     let humidityElement = document.querySelector("#humidity");
     humidityElement.innerHTML = response.data.main.humidity;
     let windElement = document.querySelector("#wind-speed");
-    windElement.innerHTML = Math.round(response.data.main.wind.speed);
+    windElement.innerHTML = Math.round(response.data.wind.speed);
     console.log(response.data);
   }
 

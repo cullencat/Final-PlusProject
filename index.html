@@ -8,7 +8,105 @@
     <title>Final PlusProject</title>
 </head>
 <body>
-    
+<div class="container">
+    <header>
+        <form id = "search-form">
+        <input 
+                type="text" 
+                placeholder="Enter your City..."  
+                  autocomplete="on",
+                  id = "entered-city"
+                />
+        <input 
+                type="submit" 
+                value="👍"
+                autofocus="on"
+                />
+      <input type="submit" id="current-button" value="Current City 📍"/>
+        </form>
+    </header>
+
+    <div class="Temp">
+
+        <h1>
+          
+        </h1>
+        <h2>
+                      🌙 Cloudy
+        </h2>
+        <h3 id="temp-now">
+            13°C
+      </h3>
+        <p class="chosenCity" id= "new-city">
+            Dublin
+        </p>
+    </div>
+
+    <div class="row" class="mid">
+            <button class="hourly">
+            Hourly Forecast
+            >>>>
+            </button>
+        <div class="col-3">
+            Tomorrow
+            
+            🌡18
+            
+            Over-cast, Blustery
+        </div>
+    </div>
+
+    <div class="row" class="weekly">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-wind"></i>
+                    <h5 class="card-title">Mon 22/06/2020</h5>
+                    <p class="card-text">Blustery</p>
+                    <a href="#" class="btn btn-primary">Hourly Forecast</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-cloud-showers-heavy"></i>
+                    <h5 class="card-title">Tue 23/06/2020</h5>
+                    <p class="card-text">Showers</p>
+                    <a href="#" class="btn btn-primary">Hourly Forecast</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-cloud-showers-heavy"></i>
+                    <h5 class="card-title">Wed 24/06/2020</h5>
+                    <p class="card-text">Intermittent Showers</p>
+                    <a href="#" class="btn btn-primary">Hourly Forecast</a>
+                </div>
+            </div>
+        </div><div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-cloud"></i>
+                    <h5 class="card-title">Thu 25/06/2020</h5>
+                    <p class="card-text">Mostly Cloudy</p>
+                    <a href="#" class="btn btn-primary">Hourly Forecast</a>
+                </div>
+            </div>
+        </div><div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-wind"></i>
+                    <h5 class="card-title">Fri 26/06/2020</h5>
+                    <p class="card-text">Blustery</p>
+                    <a href="#" class="btn btn-primary">Hourly Forecast</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
     <script src="src/index.js"></script>
 </body>
 </html>

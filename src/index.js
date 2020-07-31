@@ -60,6 +60,16 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(retrievePosition);
 }
 
+function displayTemperature(response) {
+    let temperatureElement = document.querySelector("#temp-now");
+    temperatureElement.innerHTML = Math.round(response.data.main.temp_min);
+    let cityElement = document.querySelector("#new-city");
+    cityElement.innerHTML = response.data.name;
+    let descriptionElement = document.querySelector("#description");
+    descriptionElement.innerHTML = response.data.weather[0].description;
+    console.log(response.data);
+  }
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submit);
 
@@ -67,3 +77,11 @@ let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentLocation);
 
 searchCity("#new-city");
+
+
+let apiKey = "e6d85b345de0047406ef7a81579b2fba";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Dublin,ie&appid=${apiKey}&units=metric`;
+console.log(apiUrl);
+
+axios.get(apiUrl).then(displayTemperature);
+

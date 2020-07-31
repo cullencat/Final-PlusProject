@@ -33,14 +33,3 @@ body {
     font-size: 30px;
   }
   
-  .hourly, {
-    display: block;
-    margin: 50px;
-    left: 300px;
-    padding: 40px 20px;
-    font-family: "Concert One", cursive;
-    border: 5px solid #243949;
-    background-color: #517fa4;
-    border-radius: 20px;
-    box-shadow: 5px 10px 20px;
-  }

@@ -33,54 +33,14 @@ body {
     font-size: 30px;
   }
   
-  .hourly,
-  .col-3 {
+  .hourly, {
     display: block;
     margin: 50px;
     left: 300px;
     padding: 40px 20px;
     font-family: "Concert One", cursive;
-  }
-  
-  .hourly {
     border: 5px solid #243949;
     background-color: #517fa4;
     border-radius: 20px;
     box-shadow: 5px 10px 20px;
   }
-  
-  .col-3 {
-    text-align: center;
-    font-size: 25px;
-  }
-  
-  .col {
-    width: 400px;
-    margin: 5px;
-    border-radius: 30%;
-    padding: 5px 5px;
-    font-size: 5px;
-    font-family: "Concert One", cursive;
-  }
-  
-  .card-body {
-    padding: 20px 40px 20px;
-    margin: 0;
-    background-color: #517fa4;
-  }
-  
-  .card-text {
-    text-align: center;
-    font-size: 14px;
-    font-weight: 100;
-    margin: 10px;
-    padding: 0.5px 2px 0.5px;
-  }
-  
-  .fas.fa-cloud-showers-heavy,
-  .fas.fa-wind,
-  .fas.fa-cloud {
-    margin: 0 80px;
-    font-size: 20px;
-  }
-  

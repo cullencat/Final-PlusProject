@@ -2,7 +2,8 @@ body {
     background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
   }
   
-  header {
+  header,
+  .units {
     display: block;
     margin: 20px;
     margin-top: 30px;
@@ -43,7 +44,14 @@ ul {
     list-style-type: none;
 }
 
-  .row,
+  .row  {
+    text-align: center;
+    margin: 20px;
+    padding: 0px;
+    color: #4cd3c2;
+    font-family: 'Spartan', sans-serif;
+    font-size: 20px;
+  }
   li {
     text-align: center;
     margin: 20px;
@@ -52,4 +60,3 @@ ul {
     font-family: 'Spartan', sans-serif;
     font-size: 20px;
   }
-  

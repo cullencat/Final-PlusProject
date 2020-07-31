@@ -36,21 +36,36 @@ function displayWeatherCondition(response) {
   tempElement.innerHTML = `${tempNow}°C`;
 }
 
-function searchCity(city) {
-  let apiKey = "3eb79537c4839f621b98d577d080de7d";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function displayFahrenheitTemp(event) {
+    event.preventDefault();
+    let fahrenheitTemp = (celciusTemp*9) / 5 +32;
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
 
-  axios.get(apiUrl).then(displayWeatherCondition);
+function displayCelciusTemp(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celciusTemp);
+}
+
+function searchCity(city) {
+  let apiKey = "e6d85b345de0047406ef7a81579b2fba";
+  let apiUrl = `https://samples.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+    axios.get(apiUrl).then(displayWeatherCondition);
+
+apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+axios.get(apiUrl).then(display)
 }
 
 function submit(event) {
   event.preventDefault();
-  let city = document.querySelector("#entered-city").value;
-  searchCity(city);
+  let city = document.querySelector("#entered-city");
+  search(city.value);
 }
 
 function retrievePosition(position) {
-  let apiKey = "3eb79537c4839f621b98d577d080de7d";
+  let apiKey = "e6d85b345de0047406ef7a81579b2fba";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${
     position.coords.latitude
   }&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
@@ -76,21 +91,30 @@ function displayTemperature(response) {
     windElement.innerHTML = Math.round(response.data.wind.speed);
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-    console.log(response.data);
+    
+    celciusTemp = response.main.data.temp;
   }
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", submit);
 
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celciusLink = document.querySelector("#celcius-link")
+celciusLink.addEventListener("click", displayCelciusTemp);
+
+let celciusTemp = null;
+
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentLocation);
 
-searchCity("#new-city");
 
 
 let apiKey = "e6d85b345de0047406ef7a81579b2fba";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Dublin,ie&appid=${apiKey}&units=metric`;
-console.log(apiUrl);
+
 
 axios.get(apiUrl).then(displayTemperature);
 
+searchCity("#new-city");
